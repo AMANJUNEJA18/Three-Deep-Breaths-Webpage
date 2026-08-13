@@ -1,9 +1,19 @@
-Three Deep Breaths. — Minimal Homepage
+Three Deep Breaths — Homepage Cache Fix
 
-Homepage:
+Deploy the contents of this ZIP to the existing homepage repository for:
 https://threedeepbreaths.in/
 
-App:
-https://app.threedeepbreaths.in/
+The visual homepage is unchanged.
 
-Upload index.html, CNAME and README.txt to the root of the homepage repository.
+This adds a service worker specifically to prevent stale homepage HTML:
+- HTML/navigation is always network-first.
+- updateViaCache is disabled.
+- the service worker is versioned.
+- old service-worker caches are removed.
+- the new worker activates immediately.
+- the page reloads once when the new worker takes control.
+
+Future homepage deployments should therefore fetch the newest index.html
+without requiring Private Browsing or repeated manual cache clearing.
+
+Do not deploy this package to the app repository.
