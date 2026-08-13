@@ -32,22 +32,19 @@ h1{margin:0;font-size:clamp(48px,9vw,82px);line-height:1;font-weight:400;letter-
 <a class="begin" href="https://app.threedeepbreaths.in/" aria-label="Begin Three Deep Breaths">Begin</a>
 </section>
 </main>
+
 <script>
+/*
+  The homepage is intentionally a simple static page.
+  If an older version of our homepage service worker is already installed,
+  unregister it once so it cannot keep serving stale HTML.
+*/
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', async () => {
-    try {
-      const registration = await navigator.serviceWorker.register(
-        '/sw.js?v=20260813-home-v1',
-        { updateViaCache: 'none' }
-      );
-      await registration.update();
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        window.location.reload();
-      });
-    } catch (error) {
-      console.log('Service worker update unavailable:', error);
-    }
-  });
+  navigator.serviceWorker.getRegistrations()
+    .then(registrations => {
+      registrations.forEach(registration => registration.unregister());
+    })
+    .catch(() => {});
 }
 </script>
 </body>

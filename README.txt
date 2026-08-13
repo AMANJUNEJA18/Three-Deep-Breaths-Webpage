@@ -1,19 +1,19 @@
-Three Deep Breaths — Homepage Cache Fix
+Three Deep Breaths — Homepage STATIC FINAL
 
-Deploy the contents of this ZIP to the existing homepage repository for:
+Deploy ONLY:
+- index.html
+
+This is the intentionally simple homepage build.
+
+IMPORTANT:
+- Do NOT deploy sw.js from any previous homepage cache-fix package.
+- This package contains no service worker.
+- The one-time unregister code removes any previously installed homepage
+  service worker from the visitor's browser.
+- After this release, the homepage remains a plain static HTML page.
+
+Homepage:
 https://threedeepbreaths.in/
 
-The visual homepage is unchanged.
-
-This adds a service worker specifically to prevent stale homepage HTML:
-- HTML/navigation is always network-first.
-- updateViaCache is disabled.
-- the service worker is versioned.
-- old service-worker caches are removed.
-- the new worker activates immediately.
-- the page reloads once when the new worker takes control.
-
-Future homepage deployments should therefore fetch the newest index.html
-without requiring Private Browsing or repeated manual cache clearing.
-
-Do not deploy this package to the app repository.
+App:
+https://app.threedeepbreaths.in/
