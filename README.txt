@@ -17,3 +17,10 @@ https://threedeepbreaths.in/
 
 App:
 https://app.threedeepbreaths.in/
+
+
+NIGHT UPDATE
+- Three Deep Breaths doorway remains unchanged.
+- Added a second quiet Night doorway to https://app.threedeepbreaths.in/night
+- Existing homepage service-worker unregister logic remains unchanged.
+- Deploy index.html and keep the existing CNAME.
