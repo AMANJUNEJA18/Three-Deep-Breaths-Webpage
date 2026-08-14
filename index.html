@@ -21,7 +21,12 @@ header{font-size:20px}
 h1{margin:0;font-size:clamp(48px,9vw,82px);line-height:1;font-weight:400;letter-spacing:-.045em}
 .begin{margin-top:48px;display:inline-flex;align-items:center;justify-content:center;min-width:150px;min-height:52px;padding:0 28px;border-radius:999px;background:var(--green);color:#fffdf8;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:15px}
 .begin:active{opacity:.88}
-.night-link{margin-top:16px;background:transparent;color:var(--green);border:1px solid #c4c5b9}
+.choice{transition:background .2s ease,color .2s ease,border-color .2s ease}
+.choice.primary{background:var(--green);color:#fffdf8;border:1px solid var(--green)}
+.choice.secondary{background:rgba(255,255,255,.12);color:var(--green);border:1px solid #c4c5b9}
+.choice.secondary:hover{background:var(--green);color:#fffdf8;border-color:var(--green)}
+.hero:has(.secondary:hover) .primary{background:rgba(255,255,255,.12);color:var(--green);border-color:#c4c5b9}
+.hero:has(.primary:hover) .secondary{background:rgba(255,255,255,.12);color:var(--green);border-color:#c4c5b9}
 .night-subtle{margin:10px 0 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;color:#8a9088;letter-spacing:.025em}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
@@ -31,8 +36,8 @@ h1{margin:0;font-size:clamp(48px,9vw,82px);line-height:1;font-weight:400;letter-
 <header>Three Deep Breaths.</header>
 <section class="hero">
 <h1>Three Deep Breaths.</h1>
-<a class="begin" href="https://app.threedeepbreaths.in/" aria-label="Begin Three Deep Breaths">Begin</a>
-<a class="begin night-link" href="https://app.threedeepbreaths.in/?night=1" aria-label="Enter Night">Night</a>
+<a class="begin choice primary" href="https://app.threedeepbreaths.in/" aria-label="Breathe">Breathe</a>
+<a class="begin choice secondary night-link" href="https://app.threedeepbreaths.in/?night=1" aria-label="Night">Night</a>
 <p class="night-subtle">A quiet retreat into the night.</p>
 </section>
 </main>

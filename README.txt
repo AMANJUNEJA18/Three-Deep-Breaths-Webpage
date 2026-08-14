@@ -19,8 +19,11 @@ App:
 https://app.threedeepbreaths.in/
 
 
-NIGHT UPDATE
-- Three Deep Breaths doorway remains unchanged.
-- Added a second quiet Night doorway to https://app.threedeepbreaths.in/night
-- Existing homepage service-worker unregister logic remains unchanged.
-- Deploy index.html and keep the existing CNAME.
+HOMEPAGE FINAL
+- Primary doorway: Breathe.
+- Secondary doorway: Night.
+- Breathe is green by default; Night is translucent.
+- Hovering either doorway makes it green and the other translucent.
+- Breathe opens the existing app experience.
+- Night opens the Night experience through ?night=1.
+- Deploy only index.html and CNAME; do not deploy the old homepage sw.js.
