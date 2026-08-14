@@ -27,3 +27,5 @@ HOMEPAGE FINAL
 - Breathe opens the existing app experience.
 - Night opens the Night experience through ?night=1.
 - Deploy only index.html and CNAME; do not deploy the old homepage sw.js.
+
+- Final Breathe subtitle: A quiet pause, whenever you need it.
